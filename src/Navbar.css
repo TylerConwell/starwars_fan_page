@@ -1,0 +1,140 @@
+/* --- RESET & BASE STYLES --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- HEADER CONTAINER --- */
+.navbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* Fixed height for the bar */
+  z-index: 1000;
+  background: #000; /* Solid black so menu slides from behind */
+  display: flex;
+  justify-content: space-between; /* Logo left, Hamburger right */
+  align-items: center;
+  padding: 0 5%;
+  border-bottom: 1px solid rgba(255, 232, 31, 0.3); /* Faint yellow glow */
+}
+
+/* --- LOGO --- */
+.logo-container {
+  display: flex;
+  align-items: center;
+  z-index: 1001; /* Stay above the sliding menu */
+}
+
+.nav-logo {
+  height: 50px;
+  width: auto;
+  filter: drop-shadow(0 0 5px rgba(255, 232, 31, 0.5));
+}
+
+/* --- HAMBURGER BUTTON --- */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001; /* Stay above the sliding menu */
+}
+
+.bar {
+  width: 100%;
+  height: 3px;
+  background-color: #ffe81f; /* Star Wars Yellow */
+  transition: all 0.3s ease;
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(255, 232, 31, 0.8);
+}
+
+/* Hamburger to "X" Animations */
+.bar-top-open {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.bar-mid-open {
+  opacity: 0;
+}
+.bar-bot-open {
+  transform: rotate(-45deg) translate(6px, -7px);
+}
+
+/* --- NAVIGATION MENU --- */
+.nav-menu {
+  /* Desktop defaults */
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  transition: 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #ffe81f;
+  text-shadow: 0 0 10px #ffe81f;
+}
+
+/* --- MOBILE RESPONSIVE LOGIC --- */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: absolute;
+    /* This hides it above the screen */
+    top: -400px; 
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 20px 0;
+    transition: all 0.5s ease-in-out;
+    z-index: 999; /* Just below the main black header bar */
+    border-bottom: 3px solid #ffe81f;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  /* When the 'open' class is added via React state */
+  .nav-menu.open {
+    top: 80px; /* Slides down to sit exactly under the header */
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .nav-menu a {
+    font-size: 1.2rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+}
+
+/* --- DESKTOP LOGIC --- */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none; /* Hide hamburger on computers */
+  }
+}
