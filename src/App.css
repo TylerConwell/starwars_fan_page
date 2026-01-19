@@ -1,0 +1,36 @@
+/* App.css */
+:root {
+  --primary-yellow: #ffe81f;
+  --dark-bg: #0b0b0b;
+  --text-white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-white);
+}
+
+/* Navbar styles from the video */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 5%;
+}
+
+/* Hero section with Star Wars background */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/hero-bg.jpg');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
