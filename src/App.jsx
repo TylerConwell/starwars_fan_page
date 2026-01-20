@@ -1,12 +1,25 @@
 import { useState } from 'react'
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import background from './assets/darth_vader_kneeling_wallpaper.jpg'
 import './App.css'
-import Navbar from './Navbar.jsx' // Stay with this import
+import Navbar from './Navbar.jsx'
+import Home from './pages/Home.jsx'
+import About from './pages/About.jsx'
+import Combat from './pages/Combat.jsx'
+import Contact from './pages/Contact.jsx'
 
 function App() {
   return (
     <div className="container"> {/* Fixed: className must be camelCase */}
-      
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Combat" element={<Combat />} />
+          <Route path="/Contact" element={<Contact />} />
+        </Routes>
+      </Router>
       <div style ={{
         backgroundImage: `url(${background})`,
         height: '100vh',
