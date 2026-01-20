@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
-import background from './assets/darth_vader_kneeling_wallpaper.jpg'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Navbar from './Navbar.jsx'
 import Home from './pages/Home.jsx'
@@ -10,34 +8,23 @@ import Contact from './pages/Contact.jsx'
 
 function App() {
   return (
-    <div className="container"> {/* Fixed: className must be camelCase */}
-      <Router>
+    // 1. The Router must wrap the entire application
+    <Router>
+      <div className="container">
+        
+        {/* 2. Place Navbar HERE so it stays at the top of every page */}
         <Navbar />
+
+        {/* 3. Routes will swap the content below the Navbar automatically */}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Combat" element={<Combat />} />
-          <Route path="/Contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/combat" element={<Combat />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
-      </Router>
-      <div style ={{
-        backgroundImage: `url(${background})`,
-        height: '100vh',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        position: 'relative' // Added to help position the fixed navbar
-      }}>
 
-        {/* THIS IS THE KEY: Use the component you built! */}
-        <Navbar />
-
-        <div className="hero-content" style={{ color: 'white', paddingTop: '150px', textAlign: 'center' }}>
-           {/* <h1>STAR WARS</h1>
-           <p>Welcome to the ultimate fan page</p> */}
-        </div>
       </div>
-
-    </div>
+    </Router>
   )
 }
 
