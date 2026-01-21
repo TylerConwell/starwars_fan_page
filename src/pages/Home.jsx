@@ -6,6 +6,7 @@ const Home = () => (
       <h1>THE DARK SIDE</h1>
       <p>Welcome to the Empire.</p>
     </div>
+  
   </div>
 );
 export default Home;

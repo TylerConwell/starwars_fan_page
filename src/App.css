@@ -1,31 +1,32 @@
 /* App.css */
 
-/* Remove default browser gaps */
+/* --- GLOBAL RESET --- */
 body, html {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Prevents side-scrolling */
+  overflow-x: hidden; 
+  background-color: #000; /* Fallback color */
+  /* padding-bottom: 20px; */
 }
 
+/* --- REUSABLE PAGE HERO (Home, About, Contact) --- */
 .page-hero {
-  /* This is the exact sizing you had in App.jsx */
-  height: 100vh;
+  height: 130vh;
   width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
-  /* Adding Flexbox here centers the "THE DARK SIDE" text */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
-  /* This ensures the image is visible behind the fixed Navbar */
   position: relative; 
+  padding-top: 70px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-/* Optional: Darken the image like the video template */
+/* Dark Overlay for all Hero backgrounds */
 .page-hero::before {
   content: "";
   position: absolute;
@@ -33,14 +34,108 @@ body, html {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* 40% dark overlay */
+  background: rgba(0, 0, 0, 0.5); /* 50% dark overlay */
   z-index: 1;
 }
 
-/* Ensures content stays above the dark overlay */
+/* Base text container */
 .content {
   position: relative;
   z-index: 2;
   color: white;
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.content h1 {
+  font-size: 3.5rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #ffe81f; /* Star Wars Yellow */
+  text-shadow: 0 0 10px rgba(255, 232, 31, 0.5);
+}
+
+/* --- CONTACT PAGE SPECIFIC STYLES --- */
+
+.contact-container {
+  position: relative;
+  z-index: 10; /* Ensures form is above the background overlay */
+  width: 100%;
+  max-width: 600px;
+  padding: 15px;
+}
+
+.contact-box {
+  background: rgba(0, 0, 0, 0.8); /* Deep dark background */
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #ffe81f; 
+  box-shadow: 0 0 20px rgba(255, 232, 31, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+.contact-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-box label {
+  color: #ffe81f;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* Style for all Inputs, Selects, and Textarea */
+.contact-box input[type="text"],
+.contact-box select,
+.contact-box textarea {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #333;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+/* Input Focus Glow */
+.contact-box input:focus, 
+.contact-box select:focus, 
+.contact-box textarea:focus {
+  border-color: #ffe81f;
+  box-shadow: 0 0 8px rgba(255, 232, 31, 0.6);
+}
+
+/* Submit Button */
+.contact-box input[type="submit"] {
+  background: #ffe81f;
+  color: #000;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 900;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.3s ease;
+  margin-top: 10px;
+}
+
+.contact-box input[type="submit"]:hover {
+  background: #fff;
+  box-shadow: 0 0 20px #fff;
+  transform: scale(1.02);
+}
+
+/* Placeholder color */
+::placeholder {
+  color: rgba(255, 255, 255, 0.5);
 }
