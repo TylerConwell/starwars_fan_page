@@ -139,3 +139,28 @@ body, html {
 ::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
+
+.forms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 5px;
+  margin-top: 0;
+  z-index: 5; /* Ensure it stays above the background overlay */
+  width: 90%;
+}
+
+.form-card {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #ffe81f;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.form-card:hover {
+  background: #ffe81f;
+  color: black;
+  box-shadow: 0 0 15px #ffe81f;
+}
