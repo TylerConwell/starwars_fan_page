@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import form_2_background from '../../assets/star_destroyer.jpeg';
 
 const Form2 = () => {
   return (
     /* We use page-hero to get the full-screen background and centering */
-    <div className="page-hero" style={{ backgroundColor: '#0a0a0a' }}>
+    <div className="page-hero" style={{ backgroundImage: `url(${form_2_background})` }}>
       
       <div className="content">
         <h1 style={{ color: '#ffe81f' }}>FORM II: Makashi</h1>

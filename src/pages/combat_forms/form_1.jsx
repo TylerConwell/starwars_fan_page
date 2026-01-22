@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import form_1_background from '../../assets/cloud_city_new.png';
 
 const Form1 = () => {
   return (
     /* We use page-hero to get the full-screen background and centering */
-    <div className="page-hero" style={{ backgroundColor: '#0a0a0a' }}>
-      
+   <div className="page-hero" style={{ backgroundImage: `url(${form_1_background})` }}>
       <div className="content">
         <h1 style={{ color: '#ffe81f' }}>FORM I: SHII-CHO</h1>
         <p>The Way of the Sarlacc - The Determination Form.</p>
