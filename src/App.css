@@ -164,3 +164,23 @@ body, html {
   color: black;
   box-shadow: 0 0 15px #ffe81f;
 }
+
+/* Target the select box itself */
+.contact-box select {
+  width: 100%;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.1); /* Transparent dark */
+  color: white;
+  border: 1px solid #333;
+  border-radius: 5px;
+  cursor: pointer;
+  appearance: none; /* Removes the default browser arrow in some browsers */
+  -webkit-appearance: none;
+}
+
+/* Target the actual list that drops down */
+.contact-box select option {
+  background-color: #1a1a1a; /* Solid dark color so it's not white */
+  color: #ffe81f; /* Star Wars Yellow text */
+  padding: 10px;
+}

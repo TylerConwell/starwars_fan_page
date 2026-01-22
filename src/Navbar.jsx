@@ -9,7 +9,9 @@ const Navbar = () => {
   return (
     <header className="navbar-header">
       <div className="logo-container">
-        <img src={starwars_logo} alt="Star Wars" className="nav-logo" />
+        <Link to="/">
+          <img src={starwars_logo} alt="Star Wars Home" className="nav-logo" />
+        </Link>
       </div>
 
       {/* Hamburger Icon Button */}
